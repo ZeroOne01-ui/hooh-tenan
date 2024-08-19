@@ -15,8 +15,15 @@ const __dirname = path.dirname(__filename);
 const TELEGRAM_BOT_TOKEN = '7256410617:AAE7jSC5Yy7yuP1ayTyjQU7drKYTfsnLC-A';
 const TELEGRAM_CHAT_ID = '5046106367';
 
+
+// Konfigurasi CORS
+app.use(cors({
+    origin: 'https://hooh-tenan.vercel.app', // Ganti dengan domain Vercel Anda
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+}));
+
 // Middleware
-app.use(cors()); // Mengizinkan permintaan dari domain lain
 app.use(bodyParser.json()); // Menguraikan body request sebagai JSON
 
 // Melayani file statis dari direktori 'public'
